@@ -21,13 +21,7 @@ function setup() {
 
 function draw() {
   background(255);
-  console.log(score);
-
-  if (pipes.length > 0) {
-    if (pipes[0].x == bird.x) {
-      score++;
-    }
-  }
+  score = int(millis()/100);
 
   for (var i = pipes.length-1; i >= 0; i--) {
     pipes[i].show();
