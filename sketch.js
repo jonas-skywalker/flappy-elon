@@ -56,6 +56,10 @@ function draw() {
 
   if (end) {
     image(lit, 0, 0, width, height);
+    textSize(100);
+    rectMode(CENTER);
+    textAlign(CENTER);
+    text(width/2, height/2, "U DED BRO")
   }
 }
 
