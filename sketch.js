@@ -72,3 +72,7 @@ function keyPressed() {
 function mousePressed() {
   bird.up();
 }
+
+function touchStarted() {
+  bird.up();
+}
