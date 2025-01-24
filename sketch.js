@@ -4,13 +4,16 @@ var pipes = [];
 let elon;
 let pipe_picture;
 let lit;
+let gesture;
 let score = 0;
 let end = false;
+let finished = false;
 
 function preload() {
   elon = loadImage('elon.png');
   pipe_picture = loadImage('joint.jpeg');
   lit = loadImage('elonlit.jpeg');
+  gesture = loadImage('elon_fin.jpg');
 }
 
 function setup() {
@@ -32,6 +35,12 @@ function draw() {
       bird.y = width/2;
       pipes = [];
       end = true;
+      noLoop();
+      break;
+    }
+
+    if (score > 150) {
+      finished = true;
       noLoop();
       break;
     }
@@ -59,7 +68,13 @@ function draw() {
     textSize(100);
     rectMode(CENTER);
     textAlign(CENTER);
-    text(width/2, height/2, "U DED BRO")
+    text(width/2, height/2, "U DED BRO");
+  }
+
+  if (finished) {
+    image(gesture, 0, 0, width, height);
+    textSize(100);
+    text(width/2, height/2, "U WON BRO");
   }
 }
 
